@@ -1,0 +1,140 @@
+body {
+  background-color: slateblue;
+}
+.title {
+  font-size: 32px;
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.item1 {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+.item2 {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 424px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .item1 {
+    height: 250px;
+  }
+}
+
+/* circle */
+.box-wrapper {
+  position: absolute;
+}
+.box1,
+.box2 {
+  width: 200px;
+  height: 200px;
+  border: 3px solid #fff;
+  animation: circulation 4s linear infinite;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  border-radius: 50%;
+}
+.box2 {
+  position: absolute;
+  top: 0;
+  animation-duration: 4s;
+  animation-direction: reverse;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border: 30px solid #fff;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+@keyframes circulation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.atom {
+  position: absolute;
+  margin-right: 200px;
+}
+
+/* atom */
+.o-1,
+.o-2,
+.o-3 {
+  width: 200px;
+  height: 200px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+}
+.o-1:after,
+.o-2:after,
+.o-3:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50px;
+}
+.o-1 {
+  animation: rotate1 5s linear infinite;
+}
+.o-2 {
+  animation: rotate2 5s linear infinite;
+}
+.o-3 {
+  animation: rotate3 5s linear infinite;
+}
+@keyframes rotate1 {
+  from {
+    transform: rotateX(0deg) rotateY(75deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(0deg) rotateY(75deg) rotateZ(540deg);
+  }
+}
+@keyframes rotate2 {
+  from {
+    transform: rotateX(106deg) rotateY(154deg) rotateZ(-80deg);
+  }
+  to {
+    transform: rotateX(106deg) rotateY(154deg) rotateZ(280deg);
+  }
+}
+@keyframes rotate3 {
+  from {
+    transform: rotateX(-106deg) rotateY(149deg) rotateZ(130deg);
+  }
+  to {
+    transform: rotateX(-106deg) rotateY(149deg) rotateZ(490deg);
+  }
+}
